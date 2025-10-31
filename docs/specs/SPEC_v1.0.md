@@ -5,8 +5,6 @@
 **Live URL:** https://ficta.ai
 **Status:** Production
 
-> 📚 **Archived Versions:** Previous versions of this specification are archived in [`/docs/specs/`](./docs/specs/). This is a living document that reflects the current state of the website.
-
 ---
 
 ## Table of Contents
