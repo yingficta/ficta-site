@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --brand: #7C5CFF;
+  --bg: #0A0A0A;
+  --text: #F5F5F5;
+  --muted: #B7B7B7;
+}
+
+html, body { @apply bg-[var(--bg)] text-[var(--text)] font-sans; }
+.container { @apply max-w-5xl mx-auto px-4; }
