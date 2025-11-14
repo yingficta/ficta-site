@@ -1,15 +1,15 @@
 import { Smartphone, Users, Briefcase } from "lucide-react";
+import Link from "next/link";
 
 interface BottomNavProps {
   activeView: 'product' | 'teamandpolicy' | 'opportunity';
-  onViewChange: (view: 'product' | 'teamandpolicy' | 'opportunity') => void;
 }
 
-export function BottomNav({ activeView, onViewChange }: BottomNavProps) {
+export function BottomNav({ activeView }: BottomNavProps) {
   const navItems = [
-    { id: 'product' as const, label: 'App', icon: Smartphone },
-    { id: 'opportunity' as const, label: 'Opportunity', icon: Briefcase },
-    { id: 'teamandpolicy' as const, label: 'Team and policy', icon: Users },
+    { id: 'product' as const, label: 'App', icon: Smartphone, href: '/' },
+    { id: 'opportunity' as const, label: 'Opportunity', icon: Briefcase, href: '/opportunity/' },
+    { id: 'teamandpolicy' as const, label: 'Team and policy', icon: Users, href: '/team-and-policy/' },
   ];
 
   return (
@@ -19,15 +19,15 @@ export function BottomNav({ activeView, onViewChange }: BottomNavProps) {
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeView === item.id;
-            
+
             return (
-              <button
+              <Link
                 key={item.id}
-                onClick={() => onViewChange(item.id)}
+                href={item.href}
                 className={`
                   relative px-6 py-3 rounded-full transition-all duration-300
-                  ${isActive 
-                    ? 'bg-primary text-white shadow-lg' 
+                  ${isActive
+                    ? 'bg-primary text-white shadow-lg'
                     : 'hover:bg-accent text-muted-foreground hover:text-foreground'
                   }
                 `}
@@ -38,7 +38,7 @@ export function BottomNav({ activeView, onViewChange }: BottomNavProps) {
                     {item.label}
                   </span>
                 </div>
-              </button>
+              </Link>
             );
           })}
         </div>
