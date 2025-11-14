@@ -1,7 +1,7 @@
 # Ficta Website Specification
 
-**Version:** 1.0
-**Last Updated:** October 31, 2024
+**Version:** 1.1
+**Last Updated:** November 14, 2024
 **Live URL:** https://ficta.ai
 **Status:** Production
 
@@ -33,12 +33,14 @@ The Ficta website serves as the primary web presence for Ficta, a playful AI-pow
 - Educators interested in creative writing tools
 - Children (ages 6-13) exploring story creation
 - Investors and partners researching the company
+- Potential co-founders interested in education/creative writing
 
 ### Key Objectives
 - Drive App Store downloads
 - Communicate COPPA compliance and privacy commitment
 - Showcase the app's playful, creative aesthetic
 - Provide transparent information about the team and policies
+- Attract qualified co-founder candidates
 
 ---
 
@@ -93,9 +95,10 @@ ficta-site/
 │   │   ├── layout.tsx                  # Root layout with metadata
 │   │   └── page.tsx                    # Main page with view routing
 │   ├── components/
-│   │   ├── BottomNav.tsx               # Floating navigation
+│   │   ├── BottomNav.tsx               # Floating navigation (3 tabs)
 │   │   ├── Product.tsx                 # Hero/app showcase page
 │   │   ├── TeamAndPolicy.tsx           # Team & privacy policy page
+│   │   ├── Opportunity.tsx             # Co-founder recruitment page
 │   │   ├── figma/
 │   │   │   └── ImageWithFallback.tsx   # Protected image component
 │   │   └── ui/                         # 49 shadcn/ui components
@@ -251,7 +254,7 @@ Monospace typography creates a distinctive typewriter aesthetic that connects to
 **Implementation:**
 - Single-page application (SPA)
 - State-based routing using React `useState`
-- Two views: `'product'` | `'teamandpolicy'`
+- Three views: `'product'` | `'opportunity'` | `'teamandpolicy'`
 - No page reloads, instant transitions
 - Logo click returns to Product view
 
@@ -298,6 +301,7 @@ Monospace typography creates a distinctive typewriter aesthetic that connects to
   <Logo /> {/* Fixed top-left */}
   <main>
     {activeView === 'product' && <Product />}
+    {activeView === 'opportunity' && <Opportunity />}
     {activeView === 'teamandpolicy' && <TeamAndPolicy />}
   </main>
   <BottomNav /> {/* Fixed bottom-center */}
@@ -388,15 +392,69 @@ Monospace typography creates a distinctive typewriter aesthetic that connects to
 - Contact email: ying@ficta.ai
 - Effective date: 10/27/2025
 
+### Opportunity Component
+
+**Purpose:**
+Co-founder recruitment page targeting education/creative writing professionals
+
+**Structure:**
+1. Header
+   - Title: "Join FICTA" (text-4xl)
+   - Centered layout
+
+2. Single Card Layout
+   - Container: White card, rounded-3xl, p-8
+   - Hover effects: shadow-2xl, -translate-y-2
+   - Background hover overlay: primary/5 opacity
+
+**Content Sections:**
+1. **Job Title**
+   - Position: "Co-founder, Education/Creative Writing"
+   - Posted date: 11/13/2025
+
+2. **About Ficta**
+   - Product description and mission
+   - User testing results
+   - Vision for future development
+
+3. **The Team**
+   - Founder background (Ying Dong)
+   - Work history and experience
+   - Current team structure
+
+4. **A Partner with Complementary Skills**
+   - Ideal candidate profile
+   - Required background and expertise
+   - AI/NLP experience (bonus)
+   - Product + pedagogy balance
+
+5. **Build a Startup Together**
+   - Early-stage building philosophy
+   - Day-to-day expectations
+   - Company stage and ownership structure
+   - Call to action: ying@ficta.ai
+
+**Styling:**
+- Max width: max-w-4xl
+- Text color: text-black for headings, text-muted-foreground for body
+- Spacing: space-y-8 between sections
+- Typography: text-2xl for section headings
+- Padding: px-6 lg:px-12, py-20
+
 ### BottomNav Component
 
 **Props Interface:**
 ```tsx
 interface BottomNavProps {
-  activeView: 'product' | 'teamandpolicy';
-  onViewChange: (view: 'product' | 'teamandpolicy') => void;
+  activeView: 'product' | 'opportunity' | 'teamandpolicy';
+  onViewChange: (view: 'product' | 'opportunity' | 'teamandpolicy') => void;
 }
 ```
+
+**Navigation Items:**
+1. **App** (Smartphone icon) - Product view
+2. **Opportunity** (Briefcase icon) - Co-founder recruitment
+3. **Team and policy** (Users icon) - Team & privacy info
 
 **Features:**
 - Fixed positioning
@@ -844,6 +902,16 @@ npm run dev
 
 ## Version History
 
+### Version 1.1 (November 14, 2024)
+- **Added Opportunity page** for co-founder recruitment
+- Updated navigation to include third tab (Briefcase icon)
+- Fixed build errors for production deployment:
+  - Fixed TypeScript errors with StaticImageData
+  - Removed version specifiers from all package imports
+  - Disabled `react/no-unescaped-entities` ESLint rule
+- Improved ESLint configuration for better development experience
+- Updated navigation order: App → Opportunity → Team and policy
+
 ### Version 1.0 (October 31, 2024)
 - Initial production release
 - Complete rebuild from Figma design files
@@ -857,8 +925,8 @@ npm run dev
 ---
 
 **Document Maintained By:** Ficta Development Team
-**Last Review Date:** October 31, 2024
-**Next Review Date:** January 31, 2025
+**Last Review Date:** November 14, 2024
+**Next Review Date:** February 14, 2025
 
 ---
 
