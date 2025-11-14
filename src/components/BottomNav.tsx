@@ -1,13 +1,14 @@
-import { Smartphone, Users } from "lucide-react";
+import { Smartphone, Users, Briefcase } from "lucide-react";
 
 interface BottomNavProps {
-  activeView: 'product' | 'teamandpolicy';
-  onViewChange: (view: 'product' | 'teamandpolicy') => void;
+  activeView: 'product' | 'teamandpolicy' | 'opportunity';
+  onViewChange: (view: 'product' | 'teamandpolicy' | 'opportunity') => void;
 }
 
 export function BottomNav({ activeView, onViewChange }: BottomNavProps) {
   const navItems = [
     { id: 'product' as const, label: 'App', icon: Smartphone },
+    { id: 'opportunity' as const, label: 'Opportunity', icon: Briefcase },
     { id: 'teamandpolicy' as const, label: 'Team and policy', icon: Users },
   ];
 
@@ -18,15 +19,15 @@ export function BottomNav({ activeView, onViewChange }: BottomNavProps) {
           {navItems.map((item) => {
             const Icon = item.icon;
             const isActive = activeView === item.id;
-
+            
             return (
               <button
                 key={item.id}
                 onClick={() => onViewChange(item.id)}
                 className={`
                   relative px-6 py-3 rounded-full transition-all duration-300
-                  ${isActive
-                    ? 'bg-primary text-white shadow-lg'
+                  ${isActive 
+                    ? 'bg-primary text-white shadow-lg' 
                     : 'hover:bg-accent text-muted-foreground hover:text-foreground'
                   }
                 `}

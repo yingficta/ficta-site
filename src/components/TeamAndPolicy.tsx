@@ -1,6 +1,5 @@
-"use client";
-
-import { Twitter, Linkedin } from "lucide-react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { Instagram, Twitter, Linkedin, FileText } from "lucide-react";
 import { motion } from "framer-motion";
 import yingDongImage from "figma:asset/d92992a735857595aeb9bf21070812a7f561e673.png";
 
@@ -13,6 +12,15 @@ const teamMembers = [
     twitter: "https://twitter.com/yingatcambridge",
     description: "Having lived and worked across continents, I'm drawn by how culture shapes technology and behavior. Building for diverse markets means understanding not just language or UI, but what motivates people differently — what feels intuitive in one place may be surprising in another. I've found the best teams are the ones that mirror their users' diversity, where every perspective sharpens the product and expands its reach."
   }
+];
+
+const colors = [
+  "bg-primary",
+  "bg-primary/90",
+  "bg-primary/80",
+  "bg-primary",
+  "bg-primary/90",
+  "bg-primary/80"
 ];
 
 export function TeamAndPolicy() {
@@ -43,14 +51,14 @@ export function TeamAndPolicy() {
               >
                 {/* Background on Hover */}
                 <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
-
+                
                 <div className="relative space-y-6">
                   {/* Avatar and Info */}
                   <div className="flex gap-6 items-start">
                     {/* Avatar */}
                     <div className="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden group-hover:scale-105 transition-all duration-300">
-                      <img
-                        src={member.image.src}
+                      <img 
+                        src={member.image} 
                         alt={member.name}
                         className="w-full h-full object-cover"
                       />
@@ -122,7 +130,7 @@ export function TeamAndPolicy() {
           >
             {/* Background on Hover */}
             <div className="absolute inset-0 bg-primary opacity-0 group-hover:opacity-5 transition-opacity duration-500"></div>
-
+            
             <div className="px-3 py-6 md:px-4 md:py-8 lg:px-4 lg:py-10 max-w-4xl mx-auto text-base text-black relative">
               <div className="space-y-8">
                 <div>
@@ -131,11 +139,11 @@ export function TeamAndPolicy() {
                 </div>
 
                 <p className="text-base text-black">
-                  Ficta (&ldquo;we,&rdquo; &ldquo;our,&rdquo; &ldquo;us&rdquo;) is committed to protecting the privacy of our users, especially children under the age of 13. This Privacy Policy explains how we collect, use, and store data provided by users of our app, Ficta. It also describes the rights of parents and guardians under the Children&apos;s Online Privacy Protection Act (COPPA).
+                  Ficta ("we," "our," "us") is committed to protecting the privacy of our users, especially children under the age of 13. This Privacy Policy explains how we collect, use, and store data provided by users of our app, Ficta. It also describes the rights of parents and guardians under the Children's Online Privacy Protection Act (COPPA).
                 </p>
 
                 <p className="text-base text-black">
-                  If you are a under the age of 13, you may only use our services with your parent&apos;s or guardian&apos;s express consent.
+                  If you are a under the age of 13, you may only use our services with your parent's or guardian's express consent.
                 </p>
 
                 <div>
@@ -156,7 +164,7 @@ export function TeamAndPolicy() {
                   <h3 className="text-base mb-4 text-black">2. How We Use User Data</h3>
                   <p className="mb-4 text-base text-black">We use the data we collect to:</p>
                   <p className="mb-2 text-base text-black">
-                    <strong>Improve User Experience:</strong> We analyze the stories and preferences shared to enhance the app&apos;s features and overall user experience.
+                    <strong>Improve User Experience:</strong> We analyze the stories and preferences shared to enhance the app's features and overall user experience.
                   </p>
                   <p className="mb-4 text-base text-black">
                     <strong>Analytics:</strong> We collect data for the purpose of analytics, to understand how the app is used and to make improvements.
@@ -169,7 +177,7 @@ export function TeamAndPolicy() {
                 <div>
                   <h3 className="text-base mb-4 text-black">3. Data Retention</h3>
                   <p className="text-base text-black">
-                    Ficta stores the stories created by users on our servers. There is currently no set timeline for when these stories will be deleted, but we retain them to improve the app&apos;s functionality and enhance user experiences. Users can contact us at any time if they wish to request the deletion of any specific data.
+                    Ficta stores the stories created by users on our servers. There is currently no set timeline for when these stories will be deleted, but we retain them to improve the app's functionality and enhance user experiences. Users can contact us at any time if they wish to request the deletion of any specific data.
                   </p>
                 </div>
 
@@ -181,9 +189,9 @@ export function TeamAndPolicy() {
                 </div>
 
                 <div>
-                  <h3 className="text-base mb-4 text-black">5. Children&apos;s Privacy</h3>
+                  <h3 className="text-base mb-4 text-black">5. Children's Privacy</h3>
                   <p className="mb-4 text-base text-black">
-                    Ficta is designed for users of all ages, with a primary focus on children under 13 years of age. We comply with the Children&apos;s Online Privacy Protection Act (COPPA), ensuring that we take steps to protect the privacy of children online.
+                    Ficta is designed for users of all ages, with a primary focus on children under 13 years of age. We comply with the Children's Online Privacy Protection Act (COPPA), ensuring that we take steps to protect the privacy of children online.
                   </p>
                   <p className="text-base text-black">
                     We do not collect any personally identifiable information (PII) from children under 13 without verifiable parental consent. Parents and guardians can review, amend, or delete any information their child has provided.
@@ -192,7 +200,7 @@ export function TeamAndPolicy() {
 
                 <div>
                   <h3 className="text-base mb-4 text-black">6. Parental Rights</h3>
-                  <p className="mb-4 text-base text-black">In compliance with COPPA, parents and guardians have the following rights regarding their child&apos;s data:</p>
+                  <p className="mb-4 text-base text-black">In compliance with COPPA, parents and guardians have the following rights regarding their child's data:</p>
                   <p className="mb-2 text-base text-black">
                     <strong>Review and Access:</strong> Parents can request to review any data collected about their child by contacting us at the email address provided below.
                   </p>
@@ -200,7 +208,7 @@ export function TeamAndPolicy() {
                     <strong>Revocation of Consent:</strong> Parents can revoke consent at any time, which will stop us from collecting any further data.
                   </p>
                   <p className="text-base text-black">
-                    <strong>Data Deletion:</strong> Parents can request the deletion of their child&apos;s data by contacting us. We will respond to such requests promptly and in compliance with COPPA.
+                    <strong>Data Deletion:</strong> Parents can request the deletion of their child's data by contacting us. We will respond to such requests promptly and in compliance with COPPA.
                   </p>
                 </div>
 
@@ -210,7 +218,7 @@ export function TeamAndPolicy() {
                   <ul className="list-disc pl-6 space-y-2 mb-4 text-base text-black">
                     <li>Review the data we have collected about your child.</li>
                     <li>Revoke your consent for data collection at any time.</li>
-                    <li>Request that we delete your child&apos;s data from our servers.</li>
+                    <li>Request that we delete your child's data from our servers.</li>
                   </ul>
                   <p className="text-base text-black">
                     To exercise any of these rights, please contact us via email at{" "}

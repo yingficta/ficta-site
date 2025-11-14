@@ -1,10 +1,40 @@
-"use client";
-
 import { Button } from "./ui/button";
-import { Apple, Star, Sparkles } from "lucide-react";
+import { ImageWithFallback } from "./figma/ImageWithFallback";
+import { Apple, PlayCircle, Star, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import typewriterImage from "figma:asset/7b4b926981c8f2b5834b29675e0eb4faf27cc08d.png";
+
+const testimonials = [
+  {
+    name: "Alex Johnson",
+    role: "Creative Professional",
+    content: "This app has completely transformed my workflow. It's intuitive, beautiful, and powerful.",
+    rating: 5,
+    initials: "AJ"
+  },
+  {
+    name: "Maria Garcia",
+    role: "Designer",
+    content: "I've tried many apps, but this one stands out. The attention to detail is incredible.",
+    rating: 5,
+    initials: "MG"
+  },
+  {
+    name: "David Kim",
+    role: "Entrepreneur",
+    content: "Simple yet powerful. Exactly what I needed to bring my ideas to life.",
+    rating: 5,
+    initials: "DK"
+  },
+  {
+    name: "Sophie Chen",
+    role: "Artist",
+    content: "The perfect blend of functionality and aesthetics. Highly recommended!",
+    rating: 5,
+    initials: "SC"
+  }
+];
 
 const stories = [
   "Once upon a time...",
@@ -92,21 +122,21 @@ export function Product() {
               className="space-y-10 text-center lg:text-left"
             >
               <div className="space-y-6">
-                <h1 className="tracking-tight leading-none">
+                <h1 className="tracking-tight leading-none text-left">
                   co-creator
                   <br />
                   <span className="text-primary">
                     of stories
                   </span>
                 </h1>
-                <p className="text-muted-foreground max-w-xl mx-auto lg:mx-0">
-                  Inspired by how children learn to write, the app &ldquo;shows, not tells&rdquo; how to use words, build sentences, and form stories &mdash; through playful models like one sentence at a time or build a character. Let kids lead, and let AI assist. Make writing feel like play.
+                <p className="text-muted-foreground max-w-xl mx-auto lg:mx-0 text-left">
+                  Inspired by how children learn to write, the app "shows, not tells" how to use words, build sentences, and form stories — through playful models like one sentence at a time or build a character. Let kids lead, and let AI assist. Make writing feel like play.
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4 justify-center lg:justify-start">
                 <a href="https://apps.apple.com/us/app/ficta/id6503630141" target="_blank" rel="noopener noreferrer">
-                  <Button size="lg" className="bg-black hover:bg-black/90 text-white rounded-2xl px-8 py-6 group">
+                  <Button size="lg" className="bg-black hover:bg-black/90 text-white rounded-2xl px-8 py-6 group text-center">
                     <Apple className="w-6 h-6 mr-2" />
                     <div className="text-left">
                       <div className="text-xs opacity-80">Download on the</div>
@@ -127,7 +157,7 @@ export function Product() {
               {/* Typewriter */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4">
                 <motion.img
-                  src={typewriterImage.src}
+                  src={typewriterImage}
                   alt="Typewriter creating stories"
                   className="w-96 h-auto drop-shadow-2xl relative z-20"
                   animate={{
@@ -216,7 +246,7 @@ export function Product() {
                             <div className="w-full h-[1px] bg-primary/20" />
                             <div className="w-full h-[1px] bg-primary/20" />
                           </div>
-
+                          
                           {/* Story text */}
                           <motion.p
                             className="font-mono text-sm text-foreground/80 text-center"

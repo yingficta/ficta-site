@@ -4,10 +4,11 @@ import { useState } from "react";
 import { BottomNav } from "@/components/BottomNav";
 import { Product } from "@/components/Product";
 import { TeamAndPolicy } from "@/components/TeamAndPolicy";
+import { Opportunity } from "@/components/Opportunity";
 import logoImage from "figma:asset/9b57b1f721b7529f390f9b7efdeb42384e37b266.png";
 
 export default function Home() {
-  const [activeView, setActiveView] = useState<'product' | 'teamandpolicy'>('product');
+  const [activeView, setActiveView] = useState<'product' | 'teamandpolicy' | 'opportunity'>('product');
 
   return (
     <div className="min-h-screen">
@@ -27,6 +28,7 @@ export default function Home() {
       <main>
         {activeView === 'product' && <Product />}
         {activeView === 'teamandpolicy' && <TeamAndPolicy />}
+        {activeView === 'opportunity' && <Opportunity />}
       </main>
 
       {/* Bottom Navigation */}
