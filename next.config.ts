@@ -4,6 +4,12 @@ import path from "path";
 const nextConfig: NextConfig = {
   output: "export",
   trailingSlash: true,
+  eslint: {
+    ignoreDuringBuilds: false,
+  },
+  typescript: {
+    ignoreBuildErrors: false,
+  },
   images: {
     unoptimized: true,
     domains: [],

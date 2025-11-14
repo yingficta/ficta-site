@@ -157,7 +157,7 @@ export function Product() {
               {/* Typewriter */}
               <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/4">
                 <motion.img
-                  src={typewriterImage}
+                  src={typewriterImage.src}
                   alt="Typewriter creating stories"
                   className="w-96 h-auto drop-shadow-2xl relative z-20"
                   animate={{

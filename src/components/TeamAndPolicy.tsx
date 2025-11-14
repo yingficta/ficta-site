@@ -57,8 +57,8 @@ export function TeamAndPolicy() {
                   <div className="flex gap-6 items-start">
                     {/* Avatar */}
                     <div className="w-32 h-32 flex-shrink-0 rounded-2xl overflow-hidden group-hover:scale-105 transition-all duration-300">
-                      <img 
-                        src={member.image} 
+                      <img
+                        src={member.image.src}
                         alt={member.name}
                         className="w-full h-full object-cover"
                       />
