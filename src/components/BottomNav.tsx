@@ -1,15 +1,15 @@
-import { Smartphone, Users, Briefcase } from "lucide-react";
+import { Smartphone, Users, FileText } from "lucide-react";
 import Link from "next/link";
 
 interface BottomNavProps {
-  activeView: 'product' | 'teamandpolicy' | 'opportunity';
+  activeView: 'product' | 'team' | 'policy';
 }
 
 export function BottomNav({ activeView }: BottomNavProps) {
   const navItems = [
     { id: 'product' as const, label: 'App', icon: Smartphone, href: '/' },
-    { id: 'opportunity' as const, label: 'Opportunity', icon: Briefcase, href: '/opportunity/' },
-    { id: 'teamandpolicy' as const, label: 'Team and policy', icon: Users, href: '/team-and-policy/' },
+    { id: 'team' as const, label: 'About', icon: Users, href: '/team/' },
+    { id: 'policy' as const, label: 'Policy', icon: FileText, href: '/policy/' },
   ];
 
   return (

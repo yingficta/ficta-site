@@ -4,6 +4,8 @@ import { Apple, PlayCircle, Star, Sparkles } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { useState, useEffect } from "react";
 import typewriterImage from "figma:asset/7b4b926981c8f2b5834b29675e0eb4faf27cc08d.png";
+import { CharacterGallery } from "./CharacterGallery";
+import { StoryGallery } from "./StoryGallery";
 
 const testimonials = [
   {
@@ -122,7 +124,7 @@ export function Product() {
               className="space-y-10 text-center lg:text-left"
             >
               <div className="space-y-6">
-                <h1 className="tracking-tight leading-none text-left">
+                <h1 className="text-5xl tracking-tight leading-none text-left">
                   co-creator
                   <br />
                   <span className="text-primary">
@@ -345,6 +347,9 @@ export function Product() {
           </div>
         </div>
       </section>
+
+      <CharacterGallery />
+      <StoryGallery />
     </div>
   );
 }

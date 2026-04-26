@@ -1,11 +1,11 @@
 "use client";
 
 import { BottomNav } from "@/components/BottomNav";
-import { TeamAndPolicy } from "@/components/TeamAndPolicy";
+import { Policy } from "@/components/Policy";
 import logoImage from "figma:asset/9b57b1f721b7529f390f9b7efdeb42384e37b266.png";
 import Link from "next/link";
 
-export default function TeamAndPolicyPage() {
+export default function PolicyPage() {
   return (
     <div className="min-h-screen">
       {/* Logo in top left */}
@@ -22,11 +22,11 @@ export default function TeamAndPolicyPage() {
 
       {/* Main Content */}
       <main>
-        <TeamAndPolicy />
+        <Policy />
       </main>
 
       {/* Bottom Navigation */}
-      <BottomNav activeView="team" />
+      <BottomNav activeView="policy" />
     </div>
   );
 }

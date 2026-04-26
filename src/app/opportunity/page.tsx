@@ -26,7 +26,7 @@ export default function OpportunityPage() {
       </main>
 
       {/* Bottom Navigation */}
-      <BottomNav activeView="opportunity" />
+      <BottomNav activeView="product" />
     </div>
   );
 }
