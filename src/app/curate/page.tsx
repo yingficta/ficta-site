@@ -15,6 +15,14 @@ const ADMIN_KEY = "letmecurate";
 
 type ItemType = "character" | "story";
 
+function parseSentences(content: string): { text: string; author: "user" | "ai" }[] {
+  return content
+    .split(/(?<=[.!?])\s+(?=\.{3}|[A-Z"'])/)
+    .map(s => s.trim())
+    .filter(Boolean)
+    .map((text, i) => ({ text, author: i % 2 === 0 ? "user" : "ai" }));
+}
+
 interface GalleryItem {
   id: string;
   type: ItemType;
@@ -182,9 +190,22 @@ export default function CuratePage() {
                   {item.type === "character" ? (
                     <p className="text-[10px] text-foreground/70 leading-snug line-clamp-2">{item.description}</p>
                   ) : (
-                    <div className="space-y-1">
-                      <p className="text-[10px] font-medium text-foreground leading-snug">{item.opener}</p>
-                      <p className="text-[10px] text-foreground/60 leading-snug line-clamp-4">{item.content}</p>
+                    <div className="space-y-1.5">
+                      <p className="text-[9px] font-mono text-muted-foreground">
+                        {new Date(item.created_at).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}
+                      </p>
+                      <p className="text-[10px] font-semibold text-foreground leading-snug line-clamp-1">{item.opener}</p>
+                      <div className="space-y-0.5">
+                        {parseSentences(item.content || "").slice(1).map((sentence, i) => (
+                          <p key={i} className={`text-[9px] leading-snug ${
+                            sentence.author === "user"
+                              ? "font-bold text-foreground"
+                              : "font-normal text-foreground/60"
+                          }`}>
+                            {sentence.text}
+                          </p>
+                        ))}
+                      </div>
                     </div>
                   )}
                 </div>
