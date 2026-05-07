@@ -18,7 +18,8 @@ export function Policy() {
                 <div>
                   <h2 className="text-base mb-2 text-black">Privacy Policy for Ficta</h2>
                   <p className="text-base text-black">(Apple App Store + Google Play Families Compliant)</p>
-                  <p className="text-base text-black">Effective Date: 11/23/2025</p>
+                  <p className="text-base text-black">Effective Date: November 23, 2025</p>
+                  <p className="text-base text-black">Last Updated: May 7, 2026</p>
                 </div>
 
                 <p className="text-base text-black">
@@ -35,20 +36,31 @@ export function Policy() {
                     Ficta collects only the minimum information needed for children to create and save stories. We intentionally avoid collecting unnecessary personal data.
                   </p>
                   <p className="mb-2 text-base text-black">
-                    1.1 Stories Created<br />
-                    We collect the stories that users create within the app so they can be saved, edited, and accessed later.
+                    1.1 Stories and Characters Created<br />
+                    We collect the stories and characters that users create within the app so they can be saved, edited, and accessed later.
                   </p>
                   <p className="mb-2 text-base text-black">
                     1.2 Optional Creative Preferences<br />
                     If users choose to share their favorite books, subjects, or hobbies, we collect that information to improve their experience.
                   </p>
                   <p className="mb-2 text-base text-black">
-                    1.3 No Automatically Collected Personal Information<br />
-                    We do not collect any personally identifiable information (PII) unless explicitly provided by the user. We do not access location, contacts, photos, microphone, device identifiers, or other sensitive data.
+                    1.3 Account Information<br />
+                    Users may sign in using Google Sign-In or Apple Sign-In. When they do, we receive a stable account identifier (not your full Google or Apple profile) and, optionally, an email address. We use this only to link your stories to your account across devices.
+                  </p>
+                  <p className="mb-2 text-base text-black">
+                    Users may also use the app without signing in. In this case, we assign an anonymous identifier to save your stories locally to your account. If you sign in later, your stories are carried over automatically.
+                  </p>
+                  <p className="mb-2 text-base text-black">
+                    1.4 Device Identifier<br />
+                    We generate and store a random device identifier (UUID) on your device. This identifier is used to associate your session with your saved content. It is not linked to your name, email, or any external advertising system.
+                  </p>
+                  <p className="mb-2 text-base text-black">
+                    1.5 Analytics<br />
+                    We use PostHog, a privacy-focused analytics tool, to understand how the app is being used and to improve its features. PostHog collects anonymous usage events (for example, "story started" or "character created"). It does not collect your name, email, or any content from your stories. PostHog does not use data from Ficta for advertising or cross-app tracking.
                   </p>
                   <p className="text-base text-black">
-                    1.4 No Third-Party Tracking<br />
-                    Ficta does not use advertising networks, cross-app identifiers, tracking SDKs, cookies, or behavioral profiling tools.
+                    1.6 No Advertising or Behavioral Tracking<br />
+                    Ficta does not use advertising networks, cross-app identifiers, behavioral profiling tools, or advertising SDKs of any kind.
                   </p>
                 </div>
 
@@ -56,39 +68,51 @@ export function Policy() {
                   <h3 className="text-base mb-4 text-black">2. How We Use User Data</h3>
                   <p className="mb-4 text-base text-black">We use the limited information we collect only for the following purposes:</p>
                   <p className="mb-2 text-base text-black">
-                    2.1 Improve User Experience<br />
-                    We analyze non-personal patterns in stories and preferences to enhance app features.
+                    2.1 Saving and Syncing Content<br />
+                    To save stories and characters and make them available across sessions and devices.
                   </p>
-                  <p className="mb-4 text-base text-black">
-                    2.2 Analytics (Minimal and Non-Identifying)<br />
-                    Analytics are used only to understand how the app is being used and to improve its functionality. We do not use any third-party analytics SDKs that collect data from children.
+                  <p className="mb-2 text-base text-black">
+                    2.2 Improving the App<br />
+                    We analyze anonymous usage patterns to enhance app features and fix issues.
                   </p>
+                  <p className="mb-2 text-base text-black">
+                    2.3 Account Management<br />
+                    To link your content to your account when you sign in with Google or Apple.
+                  </p>
+                  <p className="mb-2 text-base text-black">
+                    2.4 No Sharing with Third Parties<br />
+                    Ficta does not share, sell, or disclose user information to third parties for advertising or commercial purposes. The only third-party services we use are:
+                  </p>
+                  <ul className="list-disc pl-6 space-y-2 text-base text-black">
+                    <li>Supabase — authentication and account management</li>
+                    <li>PostHog — anonymous usage analytics</li>
+                    <li>Cloudflare — infrastructure and data storage</li>
+                  </ul>
                   <p className="text-base text-black">
-                    2.3 No Sharing with Third Parties<br />
-                    Ficta does not share, sell, or disclose user information to third parties. We do not display ads or run any advertising within the app.
+                    Each of these services is contractually bound to protect user data and is not permitted to use it for their own commercial purposes.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-base mb-4 text-black">3. Data Retention</h3>
                   <p className="mb-4 text-base text-black">
-                    Stories created by users are stored securely on our servers.
+                    Stories and characters created by users are stored securely on our servers.
                   </p>
-                  <p className="mb-4 text-base text-black">To meet Apple and Google requirements, our retention policy is:</p>
                   <ul className="list-disc pl-6 space-y-2 mb-4 text-base text-black">
-                    <li>Active users: Stories are kept unless deleted by the user or parent.</li>
-                    <li>Inactive users: Stories are deleted after 18 months of inactivity to minimize stored data.</li>
-                    <li>Parent or user request: We will delete data within 7 days of receiving a deletion request.</li>
+                    <li>Active users: Content is kept unless deleted by the user or parent.</li>
+                    <li>Inactive users: Content is deleted after 18 months of inactivity.</li>
+                    <li>Account deletion: When a user requests account deletion, their account enters a 30-day grace period during which they may cancel the deletion. After 30 days, all data — including stories, characters, and account information — is permanently deleted from our servers.</li>
+                    <li>Parent or user request: We will initiate deletion within 7 days of receiving a verified deletion request. Full deletion completes within 30 days.</li>
                   </ul>
                   <p className="text-base text-black">
-                    Parents or guardians may request deletion at any time.
+                    Parents or guardians may request deletion at any time by contacting us at ying@ficta.ai.
                   </p>
                 </div>
 
                 <div>
                   <h3 className="text-base mb-4 text-black">4. Data Security</h3>
                   <p className="mb-4 text-base text-black">
-                    We use reasonable physical, technical, and administrative safeguards to protect user data. This includes encryption in transit (HTTPS/SSL) and restricted access controls.
+                    We use reasonable physical, technical, and administrative safeguards to protect user data. This includes encryption in transit (HTTPS/TLS) and restricted access controls.
                   </p>
                   <p className="text-base text-black">
                     No method of electronic storage is 100% secure, but we take appropriate steps to protect user data from unauthorized access or disclosure.
@@ -112,7 +136,7 @@ export function Policy() {
                     We do not collect personal information from children under 13 without verifiable parental consent. Parental consent may be obtained through a parent-controlled email address or another legally accepted method.
                   </p>
                   <p className="text-base text-black">
-                    If a child enters personal details (such as their name) in a text field, we treat it as creative content and do not use it for identification.
+                    If a child enters personal details (such as their name) in a story or character text field, we treat it as creative content and do not use it for identification.
                   </p>
                 </div>
 
@@ -129,7 +153,7 @@ export function Policy() {
                   </p>
                   <p className="text-base text-black">
                     Deletion of Data<br />
-                    Parents can request that all of their child's data be deleted from our servers, and we will complete the deletion within 7 days.
+                    Parents can request that all of their child's data be deleted. Deletion is initiated within 7 days and fully completed within 30 days.
                   </p>
                 </div>
 
@@ -170,14 +194,12 @@ export function Policy() {
                 </div>
 
                 <div>
-                  <h3 className="text-base mb-4 text-black">9. No Ads, No Purchases, No Tracking</h3>
+                  <h3 className="text-base mb-4 text-black">9. No Ads, No In-App Purchases</h3>
                   <p className="mb-4 text-base text-black">Ficta does not include:</p>
                   <ul className="list-disc pl-6 space-y-2 mb-4 text-base text-black">
                     <li>Advertising</li>
-                    <li>Behavioral tracking</li>
-                    <li>Third-party SDKs that collect data</li>
+                    <li>Behavioral tracking or cross-app identifiers</li>
                     <li>In-app purchases</li>
-                    <li>Cross-app identifiers</li>
                     <li>Links to external apps without parental gates</li>
                   </ul>
                   <p className="text-base text-black">
@@ -217,6 +239,9 @@ export function Policy() {
                     <a href="mailto:ying@ficta.ai" className="text-black hover:text-black/80 underline">
                       ying@ficta.ai
                     </a>
+                  </p>
+                  <p className="text-base text-black">
+                    Website: https://ficta.ai
                   </p>
                 </div>
               </div>
